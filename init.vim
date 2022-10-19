@@ -101,6 +101,7 @@ call plug#end()
   lua require('nodeignore')
   lua require('indent')
   lua require'colorizer'.setup()
+
   "statusline
   source ~/.config/nvim/statusline.vim
 
