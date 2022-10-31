@@ -8,32 +8,24 @@ set termguicolors
 call plug#begin("~/.vim/plugged")
   " Plugin Section
     Plug 'navarasu/onedark.nvim'
-    Plug 'scrooloose/nerdtree'
     Plug 'nvim-lua/plenary.nvim'
+    Plug 'tpope/vim-vinegar'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     let g:coc_global_extensions = ['coc-emmet', 'coc-snippets', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
     Plug 'leafgarland/typescript-vim'
     Plug 'peitalin/vim-jsx-typescript'
-    Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'lukas-reineke/indent-blankline.nvim'
+    Plug 'mhinz/vim-startify'
+    Plug 'p00f/nvim-ts-rainbow'
     Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
   "Config Section
   let g:onedark_config = {
       \ 'style': 'darker',
   \}
   colorscheme onedark 
-
-  "nerdtree
-  let g:NERDTreeShowHidden = 1
-  let g:NERDTreeMinimalUI = 1
-  let g:NERDTreeIgnore = []
-  let g:NERDTreeStatusline = ''
-  " Automaticaly close nvim if NERDTree is only thing left open
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  " Toggle
-  nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
   "toggle-terminal
   " open new split panes to right and below
@@ -48,7 +40,7 @@ call plug#end()
     split term://zsh
     resize 10
   endfunction
-  nnoremap <c-n> :call OpenTerminal()<CR>
+  nnoremap <c-b> :call OpenTerminal()<CR>
 
   " use alt+hjkl to move between split/vsplit panels
   tnoremap <A-h> <C-\><C-n><C-w>h
@@ -66,6 +58,9 @@ call plug#end()
   nnoremap <leader>fb <cmd>Telescope buffers<cr>
   nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+  "vim-vinegar
+  let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+
   "tab-completion
   inoremap <silent><expr> <TAB>
         \ coc#pum#visible() ? coc#_select_confirm() :
@@ -80,28 +75,16 @@ call plug#end()
   
   let g:coc_snippet_next = '<tab>'
 
-  "nerdtree-git
-  let g:NERDTreeGitStatusIndicatorMapCustom = {
-                \ 'Modified'  :'✹',
-                \ 'Staged'    :'✚',
-                \ 'Untracked' :'✭',
-                \ 'Renamed'   :'➜',
-                \ 'Unmerged'  :'═',
-                \ 'Deleted'   :'✖',
-                \ 'Dirty'     :'✗',
-                \ 'Ignored'   :'☒',
-                \ 'Clean'     :'✔︎',
-                \ 'Unknown'   :'?',
-                \ }
-  let g:NERDTreeGitStatusShowClean = 1
-
-  let NERDTreeShowHidden=0
+  "makes indent blankline ignore certain filetypes
+  let g:indent_blankline_filetype_exclude = ['startify', 'help']
 
   "lua links
   lua require('nodeignore')
   lua require('indent')
   lua require'colorizer'.setup()
+  lua require('treesitter')
 
   "statusline
-  source ~/.config/nvim/statusline.vim
+  source ~/.config/nvim/plugins/statusline.vim
+  source ~/.config/nvim/plugins/startify.vim
 

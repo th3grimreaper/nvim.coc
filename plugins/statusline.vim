@@ -67,7 +67,7 @@
       let l:CurrentMode=mode()
   
       if l:CurrentMode==#"n"
-          let g:StslinePriColor     = g:StslineColorGreen
+          let g:StslinePriColor     = g:StslineColorBlue
           let b:CurrentMode = "NORMAL "
   
       elseif l:CurrentMode==#"i"
@@ -80,15 +80,15 @@
           let b:CurrentMode = "COMMAND "
   
       elseif l:CurrentMode==#"v"
-          let g:StslinePriColor     = g:StslineColorBlue
+          let g:StslinePriColor     = g:StslineColorGreen
           let b:CurrentMode = "VISUAL "
   
       elseif l:CurrentMode==#"V"
-          let g:StslinePriColor     = g:StslineColorBlue
+          let g:StslinePriColor     = g:StslineColorGreen
           let b:CurrentMode = "V-LINE "
   
       elseif l:CurrentMode==#"\<C-v>"
-          let g:StslinePriColor     = g:StslineColorBlue
+          let g:StslinePriColor     = g:StslineColorGreen
           let b:CurrentMode = "V-BLOCK "
   
       elseif l:CurrentMode==#"R"
@@ -96,7 +96,7 @@
           let b:CurrentMode = "REPLACE "
   
       elseif l:CurrentMode==#"s"
-          let g:StslinePriColor     = g:StslineColorBlue
+          let g:StslinePriColor     = g:StslineColorGreen
           let b:CurrentMode = "SELECT "
   
       elseif l:CurrentMode==#"t"
