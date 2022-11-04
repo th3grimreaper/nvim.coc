@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = 'html', 'javascript', 'css', 'typescript', 'tsx',
+  ensure_installed = 'html', 'javascript', 'css', 'typescript', 'tsx', 'cpp',
   sync_install = false,
   highlight = {
     enable = true,
@@ -9,6 +9,6 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     extended_mode = true,
     max_file_lines = nil,
-    disable = {'help', 'cpp'},
+    disable = {'help'},
   }
 }
