@@ -10,6 +10,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'navarasu/onedark.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'tpope/vim-vinegar'
+    Plug 'windwp/nvim-autopairs'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     let g:coc_global_extensions = ['coc-emmet', 'coc-snippets', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
@@ -82,7 +83,9 @@ call plug#end()
   lua require('nodeignore')
   lua require('indent')
   lua require'colorizer'.setup()
+  lua require("nvim-autopairs").setup {}
   lua require('treesitter')
+  lua require('autopair')
 
   "statusline
   source ~/.config/nvim/plugins/statusline.vim
