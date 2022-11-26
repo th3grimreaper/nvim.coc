@@ -18,7 +18,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'leafgarland/typescript-vim'
     Plug 'peitalin/vim-jsx-typescript'
     Plug 'lukas-reineke/indent-blankline.nvim'
-    Plug 'mhinz/vim-startify'
+    Plug 'goolord/alpha-nvim'
     Plug 'p00f/nvim-ts-rainbow'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -80,6 +80,9 @@ call plug#end()
   "makes indent blankline ignore certain filetypes
   let g:indent_blankline_filetype_exclude = ['startify', 'help']
 
+  "toggle alpha start screen
+  nmap <c-n> :Alpha<cr>
+
   "lua links
   lua require('nodeignore')
   lua require('indent')
@@ -88,6 +91,5 @@ call plug#end()
   lua require('treesitter')
   lua require('autopair')
   lua require('status')
-
-  "statusline
-  source ~/.config/nvim/plugins/startify.vim
+  lua require'alpha'.setup(require'alpha.themes.dashboard'.config)
+  lua require('alpha-nvim')
