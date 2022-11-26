@@ -1,6 +1,7 @@
 let g:startify_bookmarks = [
   \ { 'z': '~/.zshrc' },
   \ { 'v': '~/.config/nvim/init.vim' },
+  \ { 'w': '/mnt/c/Users/Praveen/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json' },
   \ ]
 
 let g:startify_lists = [

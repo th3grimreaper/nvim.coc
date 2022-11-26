@@ -7,6 +7,7 @@ set termguicolors
 
 call plug#begin("~/.vim/plugged")
   " Plugin Section
+    Plug 'nvim-tree/nvim-web-devicons'
     Plug 'navarasu/onedark.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'tpope/vim-vinegar'
@@ -86,8 +87,7 @@ call plug#end()
   lua require("nvim-autopairs").setup {}
   lua require('treesitter')
   lua require('autopair')
+  lua require('status')
 
   "statusline
-  source ~/.config/nvim/plugins/statusline.vim
   source ~/.config/nvim/plugins/startify.vim
-
