@@ -27,7 +27,7 @@ call plug#end()
   let g:onedark_config = {
       \ 'style': 'darker',
   \}
-  colorscheme onedark 
+  colorscheme onedark
 
   "toggle-terminal
   " open new split panes to right and below
@@ -93,3 +93,4 @@ call plug#end()
   lua require('status')
   lua require'alpha'.setup(require'alpha.themes.dashboard'.config)
   lua require('alpha-nvim')
+  lua require('config')
