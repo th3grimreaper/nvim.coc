@@ -1,4 +1,7 @@
 require'nvim-treesitter.configs'.setup {
+  context_commentstring = {
+    enable = true
+  },
   ensure_installed = 'html', 'javascript', 'css', 'typescript', 'tsx',
   sync_install = false,
   highlight = {
