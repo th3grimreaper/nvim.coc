@@ -11,6 +11,8 @@ call plug#begin("~/.vim/plugged")
     Plug 'navarasu/onedark.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'tpope/vim-vinegar'
+    Plug 'numToStr/Comment.nvim'
+    Plug 'JoosepAlviste/nvim-ts-context-commentstring'
     Plug 'windwp/nvim-autopairs'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -94,3 +96,5 @@ call plug#end()
   lua require'alpha'.setup(require'alpha.themes.dashboard'.config)
   lua require('alpha-nvim')
   lua require('config')
+  lua require('Comment').setup()
+  lua require('comments')
