@@ -1,10 +1,3 @@
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set number
-set relativenumber
-set termguicolors
-
 call plug#begin("~/.vim/plugged")
   " Plugin Section
     Plug 'nvim-tree/nvim-web-devicons'
