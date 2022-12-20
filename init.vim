@@ -14,8 +14,8 @@ call plug#begin("~/.vim/plugged")
     Plug 'leafgarland/typescript-vim'
     Plug 'peitalin/vim-jsx-typescript'
     Plug 'lukas-reineke/indent-blankline.nvim'
-    Plug 'goolord/alpha-nvim'
     Plug 'p00f/nvim-ts-rainbow'
+    Plug 'goolord/alpha-nvim'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
@@ -39,16 +39,6 @@ call plug#end()
     resize 10
   endfunction
   nnoremap <c-b> :call OpenTerminal()<CR>
-
-  " use alt+hjkl to move between split/vsplit panels
-  tnoremap <A-h> <C-\><C-n><C-w>h
-  tnoremap <A-j> <C-\><C-n><C-w>j
-  tnoremap <A-k> <C-\><C-n><C-w>k
-  tnoremap <A-l> <C-\><C-n><C-w>l
-  nnoremap <A-h> <C-w>h
-  nnoremap <A-j> <C-w>j
-  nnoremap <A-k> <C-w>k
-  nnoremap <A-l> <C-w>l
 
   "telescope
   nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -90,4 +80,5 @@ call plug#end()
   lua require'alpha'.setup(require'alpha.themes.dashboard'.config)
   lua require('alpha-nvim')
   lua require('config')
+  lua require('keymaps')
   lua require('Comment').setup()
