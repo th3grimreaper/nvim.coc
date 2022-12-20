@@ -5,6 +5,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'nvim-lua/plenary.nvim'
     Plug 'tpope/vim-vinegar'
     Plug 'numToStr/Comment.nvim'
+    Plug 'tpope/vim-surround'
     Plug 'JoosepAlviste/nvim-ts-context-commentstring'
     Plug 'windwp/nvim-autopairs'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
