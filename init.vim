@@ -1,4 +1,4 @@
-call plug#begin("~/.vim/plugged")
+call plug#begin("~/.config/nvim/plugged")
   " Plugin Section
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'navarasu/onedark.nvim'
