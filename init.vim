@@ -4,6 +4,7 @@ call plug#begin("~/.config/nvim/plugged")
     Plug 'navarasu/onedark.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'tpope/vim-vinegar'
+    Plug 'lewis6991/impatient.nvim'
     Plug 'numToStr/Comment.nvim'
     Plug 'tpope/vim-surround'
     Plug 'JoosepAlviste/nvim-ts-context-commentstring'
@@ -82,3 +83,6 @@ call plug#end()
   lua require('config')
   lua require('keymaps')
   lua require('Comment').setup()
+  lua require('coc')
+  lua require('impatient')
+  lua require('imp')
