@@ -6,6 +6,7 @@ call plug#begin("~/.config/nvim/plugged")
     Plug 'tpope/vim-vinegar'
     Plug 'lewis6991/impatient.nvim'
     Plug 'numToStr/Comment.nvim'
+    Plug 'mbbill/undotree'
     Plug 'tpope/vim-surround'
     Plug 'JoosepAlviste/nvim-ts-context-commentstring'
     Plug 'windwp/nvim-autopairs'
@@ -71,7 +72,6 @@ call plug#end()
   nmap <c-n> :Alpha<cr>
 
   "lua links
-  lua require('nodeignore')
   lua require('indent')
   lua require'colorizer'.setup()
   lua require("nvim-autopairs").setup {}
@@ -86,3 +86,4 @@ call plug#end()
   lua require('coc')
   lua require('impatient')
   lua require('imp')
+  lua require('undotree')
