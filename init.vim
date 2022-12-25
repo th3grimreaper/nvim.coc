@@ -51,6 +51,9 @@ call plug#end()
   nnoremap <leader>fb <cmd>Telescope buffers<cr>
   nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+  "add global node path
+  let g:coc_node_path = '/home/reaper/.nvm/versions/node/v18.12.1/bin/node'
+
   "prettier
   command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
