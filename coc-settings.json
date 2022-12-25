@@ -9,5 +9,6 @@
     "html",
     "json",
     "graphql"
-  ]
+  ],
+  "snippets.ultisnips.pythonPrompt": false
 }

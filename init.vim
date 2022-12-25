@@ -1,9 +1,9 @@
 call plug#begin("~/.config/nvim/plugged")
   " Plugin Section
     Plug 'nvim-tree/nvim-web-devicons'
-    Plug 'navarasu/onedark.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'tpope/vim-vinegar'
+    Plug 'sainnhe/gruvbox-material'
     Plug 'lewis6991/impatient.nvim'
     Plug 'numToStr/Comment.nvim'
     Plug 'mbbill/undotree'
@@ -22,10 +22,13 @@ call plug#begin("~/.config/nvim/plugged")
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
   "Config Section
-  let g:onedark_config = {
-      \ 'style': 'darker',
-  \}
-  colorscheme onedark
+    if has('termguicolors')
+      set termguicolors
+    endif
+    set background=dark
+    let g:gruvbox_material_background = 'soft'
+    let g:gruvbox_material_better_performance = 1
+    colorscheme gruvbox-material
 
   "toggle-terminal
   " open new split panes to right and below
@@ -40,7 +43,7 @@ call plug#end()
     split term://zsh
     resize 10
   endfunction
-  nnoremap <c-b> :call OpenTerminal()<CR>
+  nnoremap <c-t> :call OpenTerminal()<CR>
 
   "telescope
   nnoremap <leader>ff <cmd>Telescope find_files<cr>
