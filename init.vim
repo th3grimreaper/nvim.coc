@@ -22,13 +22,18 @@ call plug#begin("~/.config/nvim/plugged")
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
   "Config Section
-    if has('termguicolors')
-      set termguicolors
-    endif
-    set background=dark
-    let g:gruvbox_material_background = 'soft'
-    let g:gruvbox_material_better_performance = 1
-    colorscheme gruvbox-material
+  "transparent bg
+  au ColorScheme * hi Normal guibg=none ctermbg=none
+  au ColorScheme * hi EndOfBuffer guibg=none ctermbg=none
+
+  "colorscheme
+  if has('termguicolors')
+    set termguicolors
+  endif
+  set background=dark
+  let g:gruvbox_material_background = 'soft'
+  let g:gruvbox_material_better_performance = 1
+  colorscheme gruvbox-material
 
   "toggle-terminal
   " open new split panes to right and below

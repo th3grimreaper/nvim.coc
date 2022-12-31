@@ -10,5 +10,9 @@
     "json",
     "graphql"
   ],
+  "prettier.trailingComma": "es5",
+  "prettier.tabWidth": 2,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
   "snippets.ultisnips.pythonPrompt": false
 }
