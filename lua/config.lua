@@ -11,3 +11,4 @@ set.cursorline = true
 set.cursorcolumn = true
 set.swapfile = false
 set.hlsearch = false
+set.laststatus = 3
