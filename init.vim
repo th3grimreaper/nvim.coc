@@ -8,6 +8,7 @@ call plug#begin("~/.config/nvim/plugged")
     Plug 'numToStr/Comment.nvim'
     Plug 'mbbill/undotree'
     Plug 'tpope/vim-surround'
+    Plug 'nvim-lualine/lualine.nvim'
     Plug 'JoosepAlviste/nvim-ts-context-commentstring'
     Plug 'windwp/nvim-autopairs'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
@@ -18,12 +19,12 @@ call plug#begin("~/.config/nvim/plugged")
     Plug 'lukas-reineke/indent-blankline.nvim'
     Plug 'p00f/nvim-ts-rainbow'
     Plug 'goolord/alpha-nvim'
-    Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'NvChad/nvim-colorizer.lua'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
   "Config Section
   "transparent bg
-  au ColorScheme * hi Normal guibg=none ctermbg=none
+  au ColorScheme * hi Pmenu guibg=none ctermbg=none
   au ColorScheme * hi EndOfBuffer guibg=none ctermbg=none
 
   "colorscheme
@@ -33,6 +34,9 @@ call plug#end()
   set background=dark
   let g:gruvbox_material_background = 'soft'
   let g:gruvbox_material_better_performance = 1
+  let g:gruvbox_material_transparent_background = 1
+  let g:gruvbox_material_menu_selection_background = 'blue'
+
   colorscheme gruvbox-material
 
   "toggle-terminal
@@ -50,14 +54,8 @@ call plug#end()
   endfunction
   nnoremap <c-t> :call OpenTerminal()<CR>
 
-  "telescope
-  nnoremap <leader>ff <cmd>Telescope find_files<cr>
-  nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-  nnoremap <leader>fb <cmd>Telescope buffers<cr>
-  nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
   "add global node path
-  let g:coc_node_path = '/home/reaper/.nvm/versions/node/v18.12.1/bin/node'
+  let g:coc_node_path = '/run/user/1000/fnm_multishells/1867_1676377843319/bin/node'
 
   "prettier
   command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -88,7 +86,6 @@ call plug#end()
 
   "lua links
   lua require('indent')
-  lua require'colorizer'.setup()
   lua require("nvim-autopairs").setup {}
   lua require('treesitter')
   lua require('autopair')
@@ -102,3 +99,11 @@ call plug#end()
   lua require('impatient')
   lua require('imp')
   lua require('undotree')
+  lua require('colorize')
+
+  "telescope
+  nnoremap <leader>ff <cmd>Telescope find_files<cr>
+  nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+  nnoremap <leader>fb <cmd>Telescope buffers<cr>
+  nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
